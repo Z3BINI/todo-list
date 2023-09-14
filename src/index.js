@@ -1,4 +1,3 @@
-import test from './domStarter.js';
+import domStarter from './domStarter.js';
 
-test();
-console.log('balls');
+domStarter();
