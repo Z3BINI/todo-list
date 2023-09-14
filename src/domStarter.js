@@ -39,7 +39,7 @@ export default function() {
     
     //Add content to inner elements
     logoImg.src = logoSvg;
-    logoTxt.textContent = 'TheTooDooList';
+    logoTxt.innerHTML = 'The<br>TooDoo<br>List';
 
     footerTxt.innerHTML = 'Made by <a href="https://github.com/Z3BINI/">Z3BINI</a>';
 

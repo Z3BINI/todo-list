@@ -40,9 +40,26 @@ a {
     z-index: 999;
 }
 
+.logo {
+    height: 100%;
+    margin-left: 20px;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+}
+
 .logo > img {
     width: 75px;
     height: auto;
+}
+
+.logo > p {
+    font-size: 1.3rem;
+
+    background: -webkit-linear-gradient(90deg, #21D4FD 0%, #B721FF 100%); /*Adds gradient background, then removes it around the text, then makes text transparent!*/
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .main {
