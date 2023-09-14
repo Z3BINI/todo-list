@@ -74,18 +74,24 @@ a {
     padding: 20px 20px 20px 10px;
 
     display: flex;
+    justify-content: space-around;
     align-items: center;
     gap: 25px;
+    flex-wrap: wrap;
 
     border-radius: 10px;
     background-color: rgba(51, 51, 52, 0.5);
 }
 
-.board-optns > .del-project {
-    margin-left: auto;
+.board-optns > div {
+    min-width: 175px;
+}
 
+.board-optns > .del-project {
     width: 75px;
     height: 55px;
+    min-width: 75px;
+    min-height: 55px;
 
     background-color: #B721FF;
     border: 3px solid #FFF3B0;
@@ -98,6 +104,9 @@ a {
 .board-optns > .add-card {
     width: 53px;
     height: 53px;
+    min-width: 53px;
+    min-height: 53px;
+    
     
     background-color: #21D4FD;
     border: 3px solid #FFF3B0;
