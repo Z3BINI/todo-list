@@ -6,7 +6,9 @@ module.exports = {
     entry: {
         index: './src/index.js',
         domStarter: './src/domStarter.js',
-        domBoardOptns: './src/domBoardOptns.js'
+        domBoardOptns: './src/domBoardOptns.js',
+        projectFactory: './src/projectFactory.js',
+        eventController: './src/eventController.js',
     },
     plugins: [
         new HtmlWebpackPlugin({
