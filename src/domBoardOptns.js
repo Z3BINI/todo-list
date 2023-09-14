@@ -17,12 +17,13 @@ export default function() {
     //Add classes to elements
     addCardBtn.classList.add('add-card');
     delProjectBtn.classList.add('del-project');
+    projectSelectorNew.classList.add('add-board');
 
     //Add content to elements
     title.textContent = 'Project management';
     projectSelectorTxt.textContent = 'Which project are you working on?';
     addCardBtn.textContent = 'ADD TASK';
-    delProjectBtn.textContent = 'DELETE ENTIRE BOARD'
+    delProjectBtn.textContent = 'DELETE ENTIRE PROJECT'
     projectSelectorNew.textContent = 'New project';
 
     //Append elements
