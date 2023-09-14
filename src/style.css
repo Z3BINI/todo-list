@@ -1,3 +1,41 @@
 * {
-    background-color: yellow;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+     
+    display: grid;
+    grid-template-rows: 2fr 15fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+}
+
+.header {
+    grid-area: header;
+
+    background-color: aqua;
+}
+
+.main {
+    grid-area: main;
+
+    background-color: bisque;
+}
+
+.footer {
+    grid-area: footer;
+
+    background-color: brown;
 }
