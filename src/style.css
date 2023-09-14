@@ -69,6 +69,53 @@ a {
     background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
 }
 
+.board-optns {
+    margin: 25px 10px 0 10px;
+    padding: 20px 10px;
+
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    border-radius: 10px;
+    background-color: rgba(51, 51, 52, 0.5);
+    box-shadow: 0 0 20px white;
+}
+
+.board-optns > .del-project {
+    margin-left: auto;
+
+    width: 75px;
+    height: 55px;
+
+    background-color: #B721FF;
+    border: 3px solid #FFF3B0;
+    border-radius: 5px;
+
+    color: #FFF3B0;
+    font-weight: bold;
+}
+
+.board-optns > .add-card {
+    width: 53px;
+    height: 53px;
+    
+    background-color: #21D4FD;
+    border: 3px solid #FFF3B0;
+    border-radius: 50%;
+
+    color: #FFF3B0;
+    font-weight: bold;
+}
+
+.board-optns > button:hover {
+    transform: scale(1.2);
+}
+
+.board-optns > button:active {
+    transform: scale(1.5);
+}
+
 .footer {
     grid-area: footer;
 

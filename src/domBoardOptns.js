@@ -18,10 +18,10 @@ export default function() {
     delProjectBtn.classList.add('del-project');
 
     //Add content to elements
-    title.textContent = 'Project management';
+    title.textContent = 'Project management:';
     projectSelectorTxt.textContent = 'Which project are you working on?';
-    addCardBtn.textContent = 'Add task!';
-    delProjectBtn.textContent = 'Delete ENTIRE board'
+    addCardBtn.textContent = 'ADD TASK';
+    delProjectBtn.textContent = 'DELETE ENTIRE BOARD'
 
     //Append elements
     projectSelectorGroup.appendChild(projectSelectorTxt);
