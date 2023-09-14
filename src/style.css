@@ -26,6 +26,9 @@ body {
     grid-area: header;
 
     background-color: #333334;
+
+    box-shadow: 0 10px 20px black;
+    z-index: 999;
 }
 
 .main {
