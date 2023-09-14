@@ -21,6 +21,8 @@ export default function() {
     const logoImg = document.createElement('img');
     const logoTxt = document.createElement('p');
 
+    const footerTxt = document.createElement('p');
+
     //Add relevant classes
     //Main structure
     wrapper.classList.add('wrapper');
@@ -32,12 +34,14 @@ export default function() {
     boardOptns.classList.add('board-optns');
     board.classList.add('board');
 
-    //Inner content
+    //Inner content classes
     logo.classList.add('logo');
     
-    //Add content to elements
+    //Add content to inner elements
     logoImg.src = logoSvg;
     logoTxt.textContent = 'TheTooDooList';
+
+    footerTxt.innerHTML = 'Made by <a href="https://github.com/Z3BINI/">Z3BINI</a>';
 
     //Append elements to their respective fathers
     //Main structure
@@ -56,4 +60,5 @@ export default function() {
     logo.appendChild(logoImg);
     logo.appendChild(logoTxt);
 
+    footer.appendChild(footerTxt);
 };
