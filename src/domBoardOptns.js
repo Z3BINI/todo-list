@@ -9,6 +9,7 @@ export default function() {
     const projectSelectorGroup = document.createElement('div');
     const projectSelector = document.createElement('select');
     const projectSelectorTxt = document.createElement('p');
+    const projectSelectorNew = document.createElement('button');
 
     const addCardBtn = document.createElement('button');
     const delProjectBtn = document.createElement('button');
@@ -22,10 +23,12 @@ export default function() {
     projectSelectorTxt.textContent = 'Which project are you working on?';
     addCardBtn.textContent = 'ADD TASK';
     delProjectBtn.textContent = 'DELETE ENTIRE BOARD'
+    projectSelectorNew.textContent = 'New project';
 
     //Append elements
     projectSelectorGroup.appendChild(projectSelectorTxt);
     projectSelectorGroup.appendChild(projectSelector);
+    projectSelectorGroup.appendChild(projectSelectorNew);
 
 
     wrapper.appendChild(title);
