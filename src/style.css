@@ -67,11 +67,16 @@ a {
 
     background-color: #21D4FD;
     background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+
+    display: flex;
+    flex-direction: column;
 }
 
 .board-optns {
     margin: 25px 10px 0 10px;
     padding: 20px 20px 20px 10px;
+
+    flex: 0 1 auto;
 
     display: flex;
     justify-content: space-around;
@@ -145,6 +150,19 @@ a {
 
 .board-optns > button:active {
     transform: scale(1.5);
+}
+
+.board {
+    flex: auto;
+
+    margin: 10px;
+}
+
+.board > div {
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
 }
 
 .footer {
