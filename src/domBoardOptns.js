@@ -18,7 +18,12 @@ export default function() {
     //Add classes to elements
     addCardBtn.classList.add('add-card');
     delProjectBtn.classList.add('del-project');
-    projectSelectorNew.classList.add('add-board');
+
+    //Add IDs for task distinction
+    addCardBtn.id = 'add-card';
+    delProjectBtn.id = 'del-project';
+    projectSelector.id = 'project-change';
+    projectSelectorNew.id = 'add-project';
 
     //Add content to elements
     title.textContent = 'Project management';
