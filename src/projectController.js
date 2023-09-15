@@ -6,6 +6,7 @@ const eventManager = function(event) {
     //Cache Dom here
     const selector = document.querySelector('select');
     const projectWrapper = document.querySelector('.board');
+    const currentLoadedProject = document.querySelector('.board > div');
 
     if (event.target.id === 'add-project') {
         projectMaker(prompt('Name your project:'));
@@ -20,7 +21,9 @@ const eventManager = function(event) {
     }
 
     if (event.target.id === 'del-project') {
-        console.log('delete');
+        deleteCurrentProject(currentLoadedProject);
+        clearCurrentProject(projectWrapper);
+        return;
     }
 
 }
@@ -53,13 +56,22 @@ const clearCurrentProject = (projectWrapper) => projectWrapper.innerHTML = '';
 
 const renderSelectedProject = function(boardName, projectWrapper) { 
 
-    const searchSelected = projects.filter(project => project.option.value === boardName);
+    const searchSelected = searchProject(boardName);
     
     if (searchSelected.length === 1) {
-        projectWrapper.appendChild(searchSelected[0].element);
+        return projectWrapper.appendChild(searchSelected[0].element);
     }
 
 }
+
+const deleteCurrentProject = function(currentLoadedProject) {
+    if (!currentLoadedProject) return alert('No project selected!'); 
+
+    const searchSelected = searchProject(currentLoadedProject.value);
+    console.log(searchSelected);
+}
+
+const searchProject = (needle) => projects.filter(project => project.option.value === needle);
 
 export { eventManager }
     
