@@ -9,6 +9,7 @@ module.exports = {
         domBoardOptns: './src/domBoardOptns.js',
         projectFactory: './src/projectFactory.js',
         eventController: './src/eventController.js',
+        projectController: '.src/projectController.js',
     },
     plugins: [
         new HtmlWebpackPlugin({

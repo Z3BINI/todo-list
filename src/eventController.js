@@ -1,3 +1,5 @@
+import projectController from './projectController.js';
+
 export default function(event) {
-    console.log(event.target.textContent);
+    if (event.target.classList.value === 'add-board') projectController();
 }
