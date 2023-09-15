@@ -12,8 +12,10 @@ const init = (function(){
 
     //Cache options DOM
     const btns = document.querySelectorAll('button');
+    const select = document.querySelector('select');
 
     //Set event listeners
     btns.forEach(btn => btn.addEventListener('click', (event) => eventController(event)));
+    select.addEventListener('change', (event) => eventController(event));
 
 })();
