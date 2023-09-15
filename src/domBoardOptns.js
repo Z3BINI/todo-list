@@ -10,6 +10,7 @@ export default function() {
     const projectSelector = document.createElement('select');
     const projectSelectorTxt = document.createElement('p');
     const projectSelectorNew = document.createElement('button');
+    const defaultOption = document.createElement('option');
 
     const addCardBtn = document.createElement('button');
     const delProjectBtn = document.createElement('button');
@@ -25,6 +26,13 @@ export default function() {
     addCardBtn.textContent = 'ADD TASK';
     delProjectBtn.textContent = 'DELETE ENTIRE PROJECT'
     projectSelectorNew.textContent = 'New project';
+
+    defaultOption.text = 'Select a project...';
+    defaultOption.disabled = true;
+    defaultOption.selected = true;
+    defaultOption.hidden = true;
+
+    projectSelector.add(defaultOption, 0);
 
     //Append elements
     projectSelectorGroup.appendChild(projectSelectorTxt);
