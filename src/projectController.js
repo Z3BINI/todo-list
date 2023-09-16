@@ -9,7 +9,10 @@ const eventManager = function(event) {
     const currentLoadedProject = document.querySelector('.board > div');
 
     if (event.target.id === 'add-project') {
-        projectMaker(prompt('Name your project:'));
+        const projectName = prompt('Name your project:');
+        const projectClassName = projectName.replaceAll(' ', '-');
+
+        projectMaker(projectClassName, projectName);
         addProjectsToSelector(selector);
         return;
     }
@@ -28,17 +31,17 @@ const eventManager = function(event) {
 
 }
 
-const projectMaker = function(name) {
+const projectMaker = function(className, name) {
 
     //Create new project board element
     const projectBoardElement = document.createElement('div');
-    projectBoardElement.classList.add('board-' + name);
-    projectBoardElement.value = name;
+    projectBoardElement.classList.add('board-' + className);
+    projectBoardElement.value = className;
     
     //Create new project board option for the select
     const boardOption = document.createElement('option');
     boardOption.text = name;
-    boardOption.value = name;
+    boardOption.value = className;
 
     //Unite them in an object
     const boardObj = {
