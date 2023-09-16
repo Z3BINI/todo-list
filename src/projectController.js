@@ -1,5 +1,5 @@
 //Initialize the projects array
-const projects = [];
+let projects = [];
 
 const eventManager = function(event) { 
 
@@ -24,8 +24,15 @@ const eventManager = function(event) {
     }
 
     if (event.target.id === 'del-project') {
-        deleteCurrentProject(currentLoadedProject);
-        clearCurrentProject(projectWrapper);
+        if (!currentLoadedProject) return alert('No project selected!'); 
+        if (confirm('This will permanently delete the board, are you sure?')) {
+            deleteCurrentProject(currentLoadedProject);
+            clearCurrentProject(projectWrapper);
+            clearSelectorProjects(selector);
+            addProjectsToSelector(selector);
+            console.log(projects);
+            return;
+        }
         return;
     }
 
@@ -55,6 +62,11 @@ const projectMaker = function(className, name) {
 
 const addProjectsToSelector = (selector) => projects.forEach(project => selector.add(project.option));
 
+const clearSelectorProjects = (selector) => {
+    Array.from(selector).splice(0);
+    console.log(selector);
+}
+
 const clearCurrentProject = (projectWrapper) => projectWrapper.innerHTML = '';
 
 const renderSelectedProject = function(boardName, projectWrapper) { 
@@ -68,10 +80,10 @@ const renderSelectedProject = function(boardName, projectWrapper) {
 }
 
 const deleteCurrentProject = function(currentLoadedProject) {
-    if (!currentLoadedProject) return alert('No project selected!'); 
-
-    const searchSelected = searchProject(currentLoadedProject.value);
-    console.log(searchSelected);
+    
+    projects = projects.filter( project => project.element.value !== currentLoadedProject.value);
+    
+    return projects;
 }
 
 const searchProject = (needle) => projects.filter(project => project.option.value === needle);
