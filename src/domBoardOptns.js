@@ -30,11 +30,11 @@ export default function() {
     projectSelectorTxt.textContent = 'Which project are you working on?';
     addCardBtn.textContent = 'ADD TASK';
     delProjectBtn.textContent = 'DELETE ENTIRE PROJECT'
-    projectSelectorNew.textContent = 'New project';
+    projectSelectorNew.textContent = 'New project...';
 
     defaultOption.text = 'Select a project...';
-    defaultOption.disabled = true;
     defaultOption.selected = true;
+    defaultOption.disabled = true;
     defaultOption.hidden = true;
 
     projectSelector.add(defaultOption, 0);
