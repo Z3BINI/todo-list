@@ -67,12 +67,18 @@ export default function(event) {
     
     //Event checker
     if (event.target.id === 'add-project') {
-        const projectName = prompt('Name your project:');
-        const projectClassName = projectName.replaceAll(' ', '-');
 
-        controller.projectMaker(projectClassName, projectName);
-        render.addProjectsToSelector();
+        const projectName = prompt('Name your project:');
+
+        if(projectName) {
+            projectClassName = projectName.replaceAll(' ', '-'); 
+            controller.projectMaker(projectClassName, projectName);
+            render.addProjectsToSelector();
+            return;
+        } 
+
         return;
+        
     }
 
     if (event.target.id === 'project-change') {
