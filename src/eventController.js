@@ -1,4 +1,4 @@
-import { eventManager as projectEventManager } from './projectController.js';
+import projectEventManager from './projectController.js';
 
 
 export default function(event) {
