@@ -71,7 +71,7 @@ export default function(event) {
         const projectName = prompt('Name your project:');
 
         if(projectName) {
-            projectClassName = projectName.replaceAll(' ', '-'); 
+            const projectClassName = projectName.replaceAll(' ', '-'); 
             controller.projectMaker(projectClassName, projectName);
             render.addProjectsToSelector();
             return;
