@@ -1,3 +1,5 @@
+import projectBoardDom from './projectBoardDom.js';
+
 //Init projects array
 let projects = [];
 
@@ -30,6 +32,23 @@ export default function(event) {
             if (searchSelected.length === 1) {
                 return projectWrapper.appendChild(searchSelected[0].element);
             }
+        },
+
+        createBoardElement: (className) => {
+            
+            const projectBoardElement = projectBoardDom(className);
+            
+            
+
+            return projectBoardElement;
+        },
+
+        createBoardOptionElement: (className, name) => {
+            const boardOptionElement = document.createElement('option');
+            boardOptionElement.text = name;
+            boardOptionElement.value = className;
+
+            return boardOptionElement;
         }
 
     }
@@ -39,19 +58,15 @@ export default function(event) {
 
         projectMaker: (className, name) => {
             //Create new project board element
-            const projectBoardElement = document.createElement('div');
-            projectBoardElement.classList.add('board-' + className);
-            projectBoardElement.value = className;
+            const projectBoardElement = render.createBoardElement(className, name);
             
             //Create new project board option for the select
-            const boardOption = document.createElement('option');
-            boardOption.text = name;
-            boardOption.value = className;
+            const boardOptionElement = render.createBoardOptionElement(className, name);
         
             //Unite them in an object
             const boardObj = {
                 element: projectBoardElement,
-                option: boardOption
+                option: boardOptionElement
             }
         
             projects.push(boardObj);
