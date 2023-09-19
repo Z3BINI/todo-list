@@ -54,14 +54,19 @@ export default function(event) {
                 option: boardOption
             }
         
-            return projects.push(boardObj);
+            projects.push(boardObj);
+
+            return;
         },
 
         deleteCurrentProject: () => {
-            projects = projects.filter( project => project.element.value !== currentLoadedProject.value)
+            projects = projects.filter( project => project.element.value !== currentLoadedProject.value);
+            return;
         },
 
-        searchProject: (needle) => projects.filter(project => project.option.value === needle)
+        searchProject: (needle) => projects.filter(project => project.option.value === needle),
+
+        checkForExistingBoardName: (projectClassName) => projects.find(project => project.option.value === projectClassName)
 
     }
     
@@ -71,9 +76,14 @@ export default function(event) {
         const projectName = prompt('Name your project:');
 
         if(projectName) {
-            const projectClassName = projectName.replaceAll(' ', '-'); 
-            controller.projectMaker(projectClassName, projectName);
-            render.addProjectsToSelector();
+            const projectClassName = projectName.replaceAll(' ', '-');
+            
+            if (!(controller.checkForExistingBoardName(projectClassName))) {
+                controller.projectMaker(projectClassName, projectName);
+                render.addProjectsToSelector();
+                return;
+            }
+            alert(`Board named "${projectName}" already exists! Please chose a different name.`);
             return;
         } 
 
