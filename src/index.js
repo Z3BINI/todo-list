@@ -3,7 +3,7 @@ import domStarter from './domStarter.js';
 import domBoardOptns from './domBoardOptns.js';
 import eventController from './eventController.js';
 
-const init = (function(){
+(function(){
 
     //Start outter dom
     domStarter();
@@ -13,6 +13,7 @@ const init = (function(){
     //Cache options DOM
     const btns = document.querySelectorAll('button');
     const select = document.querySelector('select');
+    
 
     //Set event listeners
     btns.forEach(btn => btn.addEventListener('click', (event) => eventController(event)));
