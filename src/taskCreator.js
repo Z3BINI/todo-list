@@ -13,8 +13,8 @@ export default function(event){
         currentBoard.appendChild(dialogForm); 
 
         //Show the form for a new task to be added
-        dialogElement.showModal();
-        
+        dialogForm.showModal();
+
         //use data to create new task on factory
         //render new data with DOM renderer
 
