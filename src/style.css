@@ -178,6 +178,17 @@ a {
     flex-direction: column;
 }
 
+form > input, form > select {
+    width: 150px;
+    height: 25px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 25px;
+}
+
 #undef-container {
     flex: 1 1 auto;
 
