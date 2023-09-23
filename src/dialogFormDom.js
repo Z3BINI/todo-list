@@ -2,7 +2,10 @@ export default function(){
 
     //Create dialog form elements for task creation
     const dialogElement = document.createElement('dialog');
+    const title = document.createElement('h2');
     const formElement = document.createElement('form');
+    const inputContainer = document.createElement('div');
+    const btnContainer = document.createElement('div');
 
     const titleInput = document.createElement('input');
     const designationInput = document.createElement('input');
@@ -25,10 +28,11 @@ export default function(){
     const cancelBtn = document.createElement('button');
 
     //Add inner conent text or labels/placeholders
+    title.textContent = 'New task';
     submitBtn.textContent = 'Add task';
     cancelBtn.textContent = 'Close';
-    defaultStatus.textContent = 'Task status...';
-    defaultImportance.textContent = 'Task importance...';
+    defaultStatus.textContent = 'Task status';
+    defaultImportance.textContent = 'Task importance';
 
     //importances
     importance[1].textContent = 'Low';
@@ -40,8 +44,8 @@ export default function(){
     status[2].textContent = 'Doing';
     status[3].textContent = 'Done';
 
-    titleInput.placeholder = 'Task title...';
-    designationInput.placeholder = 'Task designation...';
+    titleInput.placeholder = 'Task title';
+    designationInput.placeholder = 'Task designation';
 
     //Default option attributes
     defaultImportance.disabled = true;
@@ -67,12 +71,17 @@ export default function(){
 
     //Append all elements to the dialog element
     dialogElement.appendChild(formElement);
-    formElement.appendChild(titleInput);
-    formElement.appendChild(designationInput);
-    formElement.appendChild(statusSelect);
-    formElement.appendChild(importanceSelect);
-    formElement.appendChild(submitBtn);
-    formElement.appendChild(cancelBtn);
+    formElement.appendChild(title);
+    formElement.appendChild(inputContainer);
+    formElement.appendChild(btnContainer);
+
+    inputContainer.appendChild(titleInput);
+    inputContainer.appendChild(designationInput);
+    inputContainer.appendChild(statusSelect);
+    inputContainer.appendChild(importanceSelect);
+    
+    btnContainer.appendChild(submitBtn);
+    btnContainer.appendChild(cancelBtn);
 
     return dialogElement;
 
