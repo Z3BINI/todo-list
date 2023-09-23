@@ -63,6 +63,12 @@ export default function(){
     submitBtn.id = 'insert-task';
     cancelBtn.id = 'cancel-task';
 
+    //Input IDs
+    titleInput.id = 'title';
+    designationInput.id = 'designation';
+    statusSelect.id = 'status';
+    importanceSelect.id = 'importance';
+
     //Add default options to the respective select elements
     statusSelect.add(defaultStatus);
     importanceSelect.add(defaultImportance);
