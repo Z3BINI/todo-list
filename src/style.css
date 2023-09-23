@@ -178,15 +178,40 @@ a {
     flex-direction: column;
 }
 
-form > input, form > select {
+form input, form select, form button {
     width: 150px;
     height: 25px;
 }
 
-form {
+form button {
+    border: none;
+}
+
+form, form div {
     display: flex;
     flex-direction: column;
-    padding: 50px 25px;
+    align-items: center;
+}
+
+form {
+    gap: 32px;
+}
+
+form > div:nth-child(2) {
+    gap: 8px;
+}
+
+form > div:nth-child(3) {
+    gap: 4px;
+}
+
+form > div > button:hover {
+    background-color: #333334;
+    color: white;
+}
+
+form > div > button:active {
+    transform: scale(1.1);
 }
 
 dialog {
@@ -194,6 +219,12 @@ dialog {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    padding: 50px 25px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgba(51, 51, 52, 0.7)
 }
 
 #undef-container {
