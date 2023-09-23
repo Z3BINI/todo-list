@@ -20,7 +20,7 @@ export default function() {
     delProjectBtn.classList.add('del-project');
 
     //Add IDs for task distinction
-    addCardBtn.id = 'add-card';
+    addCardBtn.id = 'add-task';
     delProjectBtn.id = 'del-project';
     projectSelector.id = 'project-change';
     projectSelectorNew.id = 'add-project';

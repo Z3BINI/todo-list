@@ -60,7 +60,7 @@ export default function(){
     submitBtn.value = 'send';
 
     //Btn IDs
-    submitBtn.id = 'add-task';
+    submitBtn.id = 'insert-task';
     cancelBtn.id = 'cancel-task';
 
     //Add default options to the respective select elements
