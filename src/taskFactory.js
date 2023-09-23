@@ -7,9 +7,18 @@ export default class Task {
         this.status = status;
     }
 
-    testFunk() {
-        console.log('pp');
+    delete() {
+        console.log('delete');
     }
+
+    changeStatus() {
+        console.log('change status');
+    }
+
+    changeImportance() {
+        console.log('change importance');
+    }
+
         
 }
 
