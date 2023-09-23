@@ -1,4 +1,5 @@
 import logoSvg from './img/logo.svg';
+import dialogElement from './dialogFormDom.js';
 
 export default function() {
     
@@ -8,6 +9,9 @@ export default function() {
     //Create elements
     //Main structure
     const wrapper = document.createElement('div');
+    
+    //Create dialog & form DOM
+    const dialogForm = dialogElement(); 
 
     const header = document.createElement('div');
     const main = document.createElement('div');
@@ -46,6 +50,7 @@ export default function() {
     //Append elements to their respective fathers
     //Main structure
     body.appendChild(wrapper);
+    body.appendChild(dialogForm); 
 
     wrapper.appendChild(header);
     wrapper.appendChild(main);
