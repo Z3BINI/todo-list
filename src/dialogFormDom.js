@@ -51,10 +51,25 @@ export default function(){
     defaultImportance.disabled = true;
     defaultImportance.hidden = true;
     defaultImportance.selected = true;
+    defaultImportance.value = '';
 
     defaultStatus.disabled = true;
     defaultStatus.hidden = true;
     defaultStatus.selected = true;
+    defaultStatus.value = '';
+
+    //Form method
+    formElement.setAttribute('method', 'dialog');
+
+    //Form validation
+    titleInput.setAttribute('required', '');
+    titleInput.setAttribute('minlength', 3);
+    titleInput.setAttribute('maxlength', 15);
+
+    designationInput.setAttribute('maxlength', 30);
+
+    statusSelect.setAttribute('required', '');
+    importanceSelect.setAttribute('required', '');
 
     //Add btn value
     submitBtn.value = 'send';
