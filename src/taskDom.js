@@ -9,6 +9,9 @@ export default function(taskInfo) {
     const changeStatus = document.createElement('select');
     const changeImportance = document.createElement('select');
 
+    const statuses = document.querySelectorAll('#status > option');
+    const importances = document.querySelectorAll('#importance > option');
+
     const selectedStatus = document.createElement('option');
     const selectedImportance = document.createElement('option');
 
@@ -22,9 +25,20 @@ export default function(taskInfo) {
     selectedImportance.textContent = taskInfo[3];
     selectedImportance.value = taskInfo[3];
 
-    //Add selected values as selected to select
-    changeStatus.add(selectedStatus);
-    changeImportance.add(selectedImportance);
+    //Append clones of the option elements to the change select element
+    for (let i = 1; i < 4; i++) {
+        changeStatus.appendChild(statuses[i].cloneNode(true)); //Otherwise the 'old' elements would be deleted...
+        changeImportance.appendChild(importances[i].cloneNode(true));
+    }    
+    
+    //Look for the selected option and initialize it as selected
+    Array.from(changeStatus).forEach(status => {
+        if (status.value === selectedStatus.value) status.selected = true;
+    });
+    Array.from(changeImportance).forEach(importance => {
+        //Check wich status is the selected one for this task
+        if (importance.value === selectedImportance.value) importance.selected = true;
+    });
 
     //Append elements to father
     taskContainer.appendChild(taskTitle);
