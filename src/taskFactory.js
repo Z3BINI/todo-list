@@ -10,9 +10,9 @@ export default class Task {
     }
 
     place() {
-        if (this.status === 'Undefined') this.board.children[0].appendChild(this.card);     
-        if (this.status === 'Doing') this.board.children[1].children[0].appendChild(this.card);
-        if (this.status === 'Done') this.board.children[1].children[1].appendChild(this.card);
+        if (this.status === 'Undefined') this.board.children[0].children[1].appendChild(this.card);     
+        if (this.status === 'Doing') this.board.children[1].children[0].children[1].appendChild(this.card);
+        if (this.status === 'Done') this.board.children[1].children[1].children[1].appendChild(this.card);
     }
 
     delete() {

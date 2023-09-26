@@ -5,6 +5,10 @@ export default function(className) {
     const doingContainer = document.createElement('div');
     const doneContainer = document.createElement('div');
 
+    const innerUndef = document.createElement('div');
+    const innerDoing = document.createElement('div');
+    const innerDone = document.createElement('div');
+
     const undefTitle = document.createElement('h3');
     const doingTitle = document.createElement('h3');
     const doneTitle = document.createElement('h3');
@@ -27,6 +31,10 @@ export default function(className) {
     undefContainer.appendChild(undefTitle);
     doingContainer.appendChild(doingTitle);
     doneContainer.appendChild(doneTitle);
+
+    undefContainer.appendChild(innerUndef);
+    doingContainer.appendChild(innerDoing);
+    doneContainer.appendChild(innerDone);
 
 
     projectBoardElement.appendChild(undefContainer);
