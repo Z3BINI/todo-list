@@ -9,9 +9,9 @@ export default function(className) {
     const innerDoing = document.createElement('div');
     const innerDone = document.createElement('div');
 
-    const undefTitle = document.createElement('h3');
-    const doingTitle = document.createElement('h3');
-    const doneTitle = document.createElement('h3');
+    const undefTitle = document.createElement('h2');
+    const doingTitle = document.createElement('h2');
+    const doneTitle = document.createElement('h2');
 
     undefContainer.id = 'undef-container';
     doingDoneContainer.id = 'doing-done-container';
