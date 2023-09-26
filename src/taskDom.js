@@ -40,6 +40,9 @@ export default function(taskInfo) {
         if (importance.value === selectedImportance.value) importance.selected = true;
     });
 
+    //Give container a class
+    taskContainer.classList.add('cards');
+
     //Append elements to father
     taskContainer.appendChild(taskTitle);
     taskContainer.appendChild(taskDesignationContainer);
