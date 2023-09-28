@@ -38,26 +38,26 @@ export default function(event){
     //Get current loaded board, if any
     const currentBoard = document.querySelector('.board > div');
     //Store form element for validation
-    const form = dialogForm.children[0];
+    const form = dialogForm.children[0];    
 
     if (event.target.id === 'insert-task') {
 
         if (form.reportValidity()) { //Due to preventDefault() I utilize this method to check form validation!
 
-            const newTaskArr = control.getUserInput();
-            const taskElement = taskDom(newTaskArr);
+            const userInputArr = control.getUserInput();
+            const taskElement = taskDom(userInputArr);
 
-            newTaskArr.push(currentBoard);
-            newTaskArr.push(taskElement);
+            userInputArr.push(currentBoard);
+            userInputArr.push(taskElement);
 
             render.closeForm();
             render.resetForm();
             render.resetSelects();
 
-            const newTask = new taskFactory(newTaskArr);
+            const newTask = new taskFactory(userInputArr);
 
             newTask.place();
-            console.log(newTask);
+            newTask.addEventListeners();
 
         }
     }
@@ -71,6 +71,8 @@ export default function(event){
     
     if (event.target.id === 'cancel-task') {
         render.closeForm();
+        render.resetForm();
+        render.resetSelects();
     }
     
 }
