@@ -8,6 +8,7 @@ export default function(taskInfo) {
     const optnsContainer = document.createElement('div');
     const changeStatus = document.createElement('select');
     const changeImportance = document.createElement('select');
+    const delBtn = document.createElement('button');
 
     const statuses = document.querySelectorAll('#status > option');
     const importances = document.querySelectorAll('#importance > option');
@@ -24,6 +25,11 @@ export default function(taskInfo) {
 
     selectedImportance.textContent = taskInfo[3];
     selectedImportance.value = taskInfo[3];
+
+    delBtn.textContent = 'Delete';
+
+
+    delBtn.id = 'del';
 
     //Append clones of the option elements to the change select element
     for (let i = 1; i < 4; i++) {
@@ -52,6 +58,7 @@ export default function(taskInfo) {
 
     optnsContainer.appendChild(changeStatus);
     optnsContainer.appendChild(changeImportance);
+    optnsContainer.appendChild(delBtn);
 
     return taskContainer;
 }
