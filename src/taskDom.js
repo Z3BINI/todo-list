@@ -29,7 +29,10 @@ export default function(taskInfo) {
     delBtn.textContent = 'Delete';
 
 
-    delBtn.id = 'del';
+    //Add class
+    delBtn.classList.add('del');
+    changeImportance.classList.add('change-imp');
+    changeStatus.classList.add('change-stat');
 
     //Append clones of the option elements to the change select element
     for (let i = 1; i < 4; i++) {
